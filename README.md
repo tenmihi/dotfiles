@@ -6,5 +6,5 @@ tenmihi's dotfiles
 
 ```
 $ cd dotfiles
-$ stow -v zsh tmux prezto
+$ stow -v zsh tmux
 ```
