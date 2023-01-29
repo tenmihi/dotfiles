@@ -10,3 +10,6 @@ install below packages
 $ cd dotfiles
 $ stow -v zsh tmux
 ```
+
+# memo
+- Nerd HFM font
