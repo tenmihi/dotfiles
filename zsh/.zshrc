@@ -5,11 +5,12 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+# keychain
+source $HOME/.keychain/$HOST-sh
 
-# Customize to your needs...
-eval `ssh-agent` > /dev/null 2>&1
-eval `ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1`
+# nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# starship (must be end of file)
+eval "$(starship init zsh)"
