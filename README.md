@@ -4,11 +4,9 @@ tenmihi's dotfiles
 
 # setup
 
-install below packages
-
 ```
 $ cd dotfiles
-$ stow -v zsh tmux
+$ stow -v tmux starship zsh -t ~/
 ```
 
 # memo
