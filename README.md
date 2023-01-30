@@ -10,4 +10,7 @@ $ stow -v tmux starship zsh -t ~/
 ```
 
 # memo
-- Nerd HFM font
+- starship
+  - Nerd HFM font
+  - [Bracketed Segments preset](https://starship.rs/ja-jp/presets/bracketed-segments.html)
+
