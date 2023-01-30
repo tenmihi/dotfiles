@@ -1,0 +1,11 @@
+scan_timeout = 10
+
+[gcloud]
+disabled = true
+
+[character]
+error_symbol = "[✖](bold red) "
+
+[username]
+style_user = "bold dimmed blue"
+show_always = true
