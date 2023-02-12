@@ -10,3 +10,7 @@ sudo apt-get install keychain
 
 # Install stow
 sudo apt-get install -y stow
+
+# setup private run command
+mkdir -p $HOME/dotfiles/private
+touch $HOME/dotfiles/private/zshrc

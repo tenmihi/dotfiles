@@ -2,6 +2,10 @@
 
 tenmihi's dotfiles
 
+# notice
+
+- Put this directly under home directory
+
 # setup
 
 ```
