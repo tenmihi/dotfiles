@@ -1,10 +1,3 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
 # keychain
 /usr/bin/keychain $HOME/.ssh/id_ed25519
 source $HOME/.keychain/$HOST-sh
