@@ -1,6 +1,15 @@
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# history
+export HISTFILE=${HOME}/.zsh_history
+export HISTSIZE=1000
+export SAVEHIST=100000
+setopt hist_ignore_dups
+setopt EXTENDED_HISTORY
+
+function history-all { history -E 1 }
+
 # keychain
 keychain $HOME/.ssh/id_ed25519
 source $HOME/.keychain/$HOST-sh
