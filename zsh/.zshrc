@@ -1,5 +1,8 @@
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # keychain
-/usr/bin/keychain $HOME/.ssh/id_ed25519
+keychain $HOME/.ssh/id_ed25519
 source $HOME/.keychain/$HOST-sh
 
 # nvm
@@ -13,3 +16,4 @@ fi
 
 # starship (must be end of file)
 eval "$(starship init zsh)"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
