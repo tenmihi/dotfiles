@@ -13,6 +13,9 @@ brew install keychain
 # Install stow
 brew install stow
 
+# Install tmux
+brew install tmux
+
 # setup private run command
 mkdir -p $HOME/dotfiles/private
 touch $HOME/dotfiles/private/zshrc
