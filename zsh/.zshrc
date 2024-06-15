@@ -14,6 +14,25 @@ if [ -e "$HOME/dotfiles/private/zshrc" ]; then
   source $HOME/dotfiles/private/zshrc
 fi
 
+# nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# flutter
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+export PATH="$PATH:$HOME/development/flutter/bin"
+export PATH="$PATH:/Users/tenmihi/Library/Android/sdk/platform-tools"
+
+# rbenv
+eval "$(rbenv init - zsh)"
+
+# use trash instead of rm
+alias rm=trash
+
+# set vim mode
+set -o vi
+
+# ignorespace & ignoredups
+HISTCONTROL=ignoreboth
+
 # starship (must be end of file)
 eval "$(starship init zsh)"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
