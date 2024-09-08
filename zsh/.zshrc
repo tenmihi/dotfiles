@@ -1,14 +1,20 @@
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# history
-export HISTFILE=${HOME}/.zsh_history
-export HISTSIZE=1000
-export SAVEHIST=100000
-setopt hist_ignore_dups
-setopt EXTENDED_HISTORY
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/tenmihi/.zshrc'
 
-function history-all { history -E 1 }
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # keychain
 keychain $HOME/.ssh/id_ed25519
@@ -45,3 +51,4 @@ HISTCONTROL=ignoreboth
 
 # starship (must be end of file)
 eval "$(starship init zsh)"
+
