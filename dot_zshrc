@@ -1,0 +1,46 @@
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# flutter
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+export PATH="$PATH:$HOME/development/flutter/bin"
+export PATH="$PATH:/Users/tenmihi/Library/Android/sdk/platform-tools"
+
+# rbenv
+eval "$(rbenv init - zsh)"
+
+# use trash instead of rm
+alias rm=trash
+
+# set vim mode
+set -o vi
+
+# ignorespace & ignoredups
+HISTCONTROL=ignoreboth
+
+# Detault editor
+EDITOR=vim
+
+# peco + ghq
+ghq-cd() {
+  local repo
+  repo=$(ghq list -p | peco)
+  if [ -n "$repo" ]; then
+    cd "$repo"
+  fi
+}
+
+ghq-open() {
+  local repo
+  repo=$(ghq list -p | peco)
+  if [ -n "$repo" ]; then
+    code "$repo"
+  fi
+}
+
+# incremental search
+bindkey '^R' history-incremental-search-backward
+
+# starship (must be end of file)
+eval "$(starship init zsh)"
+
