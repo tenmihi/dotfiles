@@ -1,27 +1,45 @@
-# homebrew
+##############################################
+# 基本環境設定 (Homebrew / PATH)
+##############################################
+
+# Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# flutter
+# PATH: curl, Flutter, Android SDK
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 export PATH="$PATH:$HOME/development/flutter/bin"
 export PATH="$PATH:/Users/tenmihi/Library/Android/sdk/platform-tools"
 
+
+##############################################
+# 言語ツール / ランタイム
+##############################################
+
 # rbenv
 eval "$(rbenv init - zsh)"
 
-# use trash instead of rm
+
+##############################################
+# シェル基本設定 / エイリアス・エディタ
+##############################################
+
+# rm の代わりに trash を使用
 alias rm=trash
 
-# set vim mode
+# Vim キーバインド
 set -o vi
 
-# ignorespace & ignoredups
-HISTCONTROL=ignoreboth
+# ヒストリ設定 (先頭スペース・重複を無視)
+setopt hist_ignore_space hist_ignore_dups
 
-# Detault editor
+# 既定エディタ
 EDITOR=vim
 
-# peco + ghq
+
+##############################################
+# ghq / peco ユーティリティ
+##############################################
+
 ghq-cd() {
   local repo
   repo=$(ghq list -p | peco)
@@ -38,7 +56,11 @@ ghq-open() {
   fi
 }
 
-# fzf history
+
+##############################################
+# fzf 履歴検索 (Ctrl-r)
+##############################################
+
 function fzf-select-history() {
     BUFFER=$(history -n -r 1 | fzf --query "$LBUFFER" --reverse)
     CURSOR=$#BUFFER
@@ -47,6 +69,10 @@ function fzf-select-history() {
 zle -N fzf-select-history
 bindkey '^r' fzf-select-history
 
-# starship (must be end of file)
-eval "$(starship init zsh)"
 
+##############################################
+# プロンプト (starship)
+# ※ この初期化はファイル末尾に置く必要があります
+##############################################
+
+eval "$(starship init zsh)"
