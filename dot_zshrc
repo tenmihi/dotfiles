@@ -3,21 +3,7 @@
 ##############################################
 
 # Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# PATH: curl, Flutter, Android SDK
-export PATH="/opt/homebrew/opt/curl/bin:$PATH"
-export PATH="$PATH:$HOME/development/flutter/bin"
-export PATH="$PATH:/Users/tenmihi/Library/Android/sdk/platform-tools"
-
-
-##############################################
-# 言語ツール / ランタイム
-##############################################
-
-# rbenv
-eval "$(rbenv init - zsh)"
-
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 ##############################################
 # シェル基本設定 / エイリアス・エディタ
@@ -69,10 +55,3 @@ function fzf-select-history() {
 zle -N fzf-select-history
 bindkey '^r' fzf-select-history
 
-
-##############################################
-# プロンプト (starship)
-# ※ この初期化はファイル末尾に置く必要があります
-##############################################
-
-eval "$(starship init zsh)"
