@@ -9,8 +9,10 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # シェル基本設定 / エイリアス・エディタ
 ##############################################
 
+{{- if eq .chezmoi.os "darwin" }}
 # rm の代わりに trash を使用
 alias rm=trash
+{{- end }}
 
 # Vim キーバインド
 set -o vi
