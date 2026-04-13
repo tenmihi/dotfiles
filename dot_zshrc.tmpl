@@ -5,6 +5,9 @@
 # Homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# mise
+eval "$(/home/tenmihi/.local/bin/mise activate zsh)"
+
 ##############################################
 # シェル基本設定 / エイリアス・エディタ
 ##############################################
@@ -56,6 +59,7 @@ function fzf-select-history() {
 }
 zle -N fzf-select-history
 bindkey '^r' fzf-select-history
+
 
 
 

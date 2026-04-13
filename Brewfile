@@ -5,3 +5,4 @@ brew "peco"
 brew "tmux"
 brew "fzf"
 brew "trash", link: true
+brew "mise"
