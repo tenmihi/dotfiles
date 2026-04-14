@@ -3,19 +3,22 @@
 ##############################################
 
 # Homebrew
+{{- if eq .chezmoi.os "darwin" }}
+eval "$(/opt/homebrew/bin/brew shellenv)"
+{{- else }}
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+{{- end }}
 
 # mise
 eval "$(/home/tenmihi/.local/bin/mise activate zsh)"
 
-##############################################
-# シェル基本設定 / エイリアス・エディタ
-##############################################
+# PATH
+export PATH="$HOME/.local/bin:$PATH"
 
-{{- if eq .chezmoi.os "darwin" }}
-# rm の代わりに trash を使用
-alias rm=trash
-{{- end }}
+
+##############################################
+# シェル基本設定
+##############################################
 
 # Vim キーバインド
 set -o vi
@@ -25,6 +28,16 @@ setopt hist_ignore_space hist_ignore_dups
 
 # 既定エディタ
 EDITOR=vim
+
+
+##############################################
+# エイリアス
+##############################################
+
+{{- if eq .chezmoi.os "darwin" }}
+# rm の代わりに trash を使用
+alias rm=trash
+{{- end }}
 
 
 ##############################################
@@ -61,7 +74,9 @@ zle -N fzf-select-history
 bindkey '^r' fzf-select-history
 
 
-
+##############################################
+# ローカル設定
+##############################################
 
 if [ -f "$HOME/.zshrc.local" ]; then
     source "$HOME/.zshrc.local"
